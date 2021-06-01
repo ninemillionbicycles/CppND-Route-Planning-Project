@@ -67,25 +67,37 @@ void RoutePlanner::AddNeighbors(RouteModel::Node *current_node) {
   }
 }
 
+// Functions returns true if f value of node_a is larger than f value of node_b
+bool CompareNodes(RouteModel::Node *node_a, RouteModel::Node *node_b) {
+  return ((node_a->g_value + node_a->h_value) >
+          (node_b->g_value + node_b->h_value));
+}
+
 // TODO 5: Complete the NextNode method to sort the open list and return the
 // next node. Tips:
 // - Sort the open_list according to the sum of the h value and g value.
 // - Create a pointer to the node in the list with the lowest sum.
 // - Remove that node from the open_list.
 // - Return the pointer.
-RouteModel::Node *RoutePlanner::NextNode() {}
+RouteModel::Node *RoutePlanner::NextNode() {
+  // Sort open_list from highest to lowest f_value
+  // This is expensive, it would probably be better to use a heap as open_list
+  std::sort(open_list.begin(), open_list.end(), CompareNodes);
+
+  RouteModel::Node *lowest = open_list.back();
+  open_list.pop_back();
+  return lowest;
+}
 
 // TODO 6: Complete the ConstructFinalPath method to return the final path
 // found from your A* search. Tips:
 // - This method should take the current (final) node as an argument and
-// iteratively follow the
-//   chain of parents of nodes until the starting node is found.
+// iteratively follow the chain of parents of nodes until the starting node is
+// found.
 // - For each node in the chain, add the distance from the node to its parent
 // to the distance variable.
 // - The returned vector should be in the correct order: the start node should
-// be the first element
-//   of the vector, the end node should be the last element.
-
+// be the first element of the vector, the end node should be the last element.
 std::vector<RouteModel::Node>
 RoutePlanner::ConstructFinalPath(RouteModel::Node *current_node) {
   // Create path_found vector
@@ -110,7 +122,8 @@ RoutePlanner::ConstructFinalPath(RouteModel::Node *current_node) {
 // exits. This path will then be displayed on the map tile.
 
 void RoutePlanner::AStarSearch() {
-  RouteModel::Node *current_node = nullptr;
+  std::cout << "A* Search started.";
 
+  RouteModel::Node *current_node = nullptr;
   // TODO: Implement your solution here.
 }
