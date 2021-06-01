@@ -40,8 +40,7 @@ int main(int argc, const char **argv) {
   }
   // If input not given or not usable use default map
   else {
-    std::cout << "To specify a map file use the following format: "
-              << std::endl;
+    std::cout << "To specify a map file use the following format: " << std::endl;
     std::cout << "Usage: [executable] [-f filename.osm]" << std::endl;
     osm_data_file = "../map.osm";
   }
@@ -58,12 +57,8 @@ int main(int argc, const char **argv) {
       osm_data = std::move(*data);
   }
 
-  // TODO 1: Declare floats `start_x`, `start_y`, `end_x`, and `end_y` and get
-  // user input for these values using std::cin. Pass the user input to the
-  // RoutePlanner object below in place of 10, 10, 90, 90.
   std::cout << "Please enter the coordinates of the start and end point "
-               "between which you want to find the shortest path."
-            << "\n";
+               "between which you want to find the shortest path. \n";
 
   std::vector<std::string> input_text{
       "start_x",
@@ -81,8 +76,7 @@ int main(int argc, const char **argv) {
     while (!(std::cin >> input)) { // Check whether the input is a number
       std::cin.clear();
       std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-      std::cout << "Invalid input, please try again. " << input_text[index]
-                << ": ";
+      std::cout << "Invalid input, please try again. " << input_text[index] << ": ";
     }
     if (input >= 0 &&
         input <= 100) { // Check whether the number is in the range
@@ -105,16 +99,10 @@ int main(int argc, const char **argv) {
   // Render results of search.
   Render render{model};
 
-  auto display = io2d::output_surface{400,
-                                      400,
-                                      io2d::format::argb32,
-                                      io2d::scaling::none,
-                                      io2d::refresh_style::fixed,
-                                      30};
+  auto display = io2d::output_surface{400, 400, io2d::format::argb32, io2d::scaling::none, io2d::refresh_style::fixed, 30};
   display.size_change_callback([](io2d::output_surface &surface) {
     surface.dimensions(surface.display_dimensions());
   });
-  display.draw_callback(
-      [&](io2d::output_surface &surface) { render.Display(surface); });
+  display.draw_callback( [&](io2d::output_surface &surface) { render.Display(surface); });
   display.begin_show();
 }
