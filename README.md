@@ -21,9 +21,9 @@ When cloning this project, use the `--recurse-submodules` flag.
   * Windows: [MinGW](http://www.mingw.org/).
 * IO2D
   * Linux and Windows: Installation instructions can be found [here](https://github.com/cpp-io2d/P0267_RefImpl/blob/master/BUILDING.md).
-  * Mac: I recommend following the steps listed out in the [next section](#install-and-build-io2d-on-mac).
+  * Mac: I recommend following the steps listed out in the [next section](#installing-and-building-io2d-on-mac).
 
-## Install and build IO2D on Mac
+## Installing and building IO2D on Mac
 
 The following instructions are adapted from [https://github.com/mylescallan/OpenStreetMaps_C-](https://github.com/mylescallan/OpenStreetMaps_C-).
 
@@ -33,19 +33,23 @@ The following instructions are adapted from [https://github.com/mylescallan/Open
 git clone --recurse-submodules https://github.com/cpp-io2d/P0267_RefImpl
 ```
 
-2. Follow the O2D instructions: https://github.com/cpp-io2d/P0267_RefImpl/blob/master/BUILDING.md
+2. Follow the O2D instructions: https://github.com/cpp-io2d/P0267_RefImpl/blob/master/BUILDING.md.
 
-3. Install `libpng` using Homebrew: `brew install libpng`
+3. Install `libpng` using Homebrew: 
 
-4. Install `cmake` using Homebrew: `brew install cmake`
+```brew install libpng```
 
-5. In the ``thirdparty` folder `cd` to `P0267_RefImpl`
+4. Install `cmake` using Homebrew: 
+
+```brew install cmake```
+
+5. In the ``thirdparty` folder `cd` to `P0267_RefImpl` and run the following commands:
 
 ```
 mkdir Debug && cd Debug
 ```
 
-Next, when I try to run cmake as described step 5. of [https://github.com/mylescallan/OpenStreetMaps_C-](https://github.com/mylescallan/OpenStreetMaps_C-), I get the error `CMake Error: Unknown argument --config`. What worked for me was to remove the `--config` statement and run only
+Next, when I try to run cmake as described step 5. of [https://github.com/mylescallan/OpenStreetMaps_C-](https://github.com/mylescallan/OpenStreetMaps_C-), I get the error `CMake Error: Unknown argument --config`. What works for me isss to remove the `--config` statement and run only
 
 ```
 cmake -G "Xcode" -DIO2D_DEFAULT=COREGRAPHICS_MAC ../.
