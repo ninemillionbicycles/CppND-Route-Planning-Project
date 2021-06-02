@@ -9,21 +9,61 @@ This repository contains tmy solution for the Route Planning project of the Udac
 When cloning this project, use the `--recurse-submodules` flag. 
 
 ## Dependencies
-* cmake $\geq$ 3.11.3
+* cmake 3.11.3 or higher
   * All operating systems: [Click here for installation instructions](https://cmake.org/install/).
-* make $\geq$ 4.1 (Linux, Mac), 3.81 (Windows)
+* make 4.1 or higher (Linux, Mac), 3.81 or higher (Windows) 
   * Linux: make is installed by default on most Linux distributions
   * Mac: [Install Xcode command line tools to get make](https://developer.apple.com/xcode/features/).
   * Windows: [Click here for installation instructions](http://gnuwin32.sourceforge.net/packages/make.htm).
-* gcc/g++ $\geq$ 7.4.0
+* gcc/g++ 7.4.0 or higher
   * Linux: gcc / g++ is installed by default on most Linux distributions.
   * Mac: Same instructions as for make - [Install Xcode command line tools](https://developer.apple.com/xcode/features/).
   * Windows: [MinGW](http://www.mingw.org/).
 * IO2D
   * Linux and Windows: Installation instructions can be found [here](https://github.com/cpp-io2d/P0267_RefImpl/blob/master/BUILDING.md).
-  * Mac: I recommend following the steps listed out in the [next section](#io2d-on-mac).
+  * Mac: I recommend following the steps listed out in the [next section](#install-and-build-io2d-on-mac).
 
-[Install and build IO2D on Mac](#io2d-on-mac)
+## Install and build IO2D on Mac
+
+The following instructions are adapted from [https://github.com/mylescallan/OpenStreetMaps_C-](https://github.com/mylescallan/OpenStreetMaps_C-).
+
+1. `cd` to the `thirdparty` folder and clone the IO2D files:
+
+```
+git clone --recurse-submodules https://github.com/cpp-io2d/P0267_RefImpl
+```
+
+2. Follow the O2D instructions: https://github.com/cpp-io2d/P0267_RefImpl/blob/master/BUILDING.md
+
+3. Install `libpng` using Homebrew: `brew install libpng`
+
+4. Install `cmake` using Homebrew: `brew install cmake`
+
+5. In the ``thirdparty` folder `cd` to `P0267_RefImpl`
+
+```
+mkdir Debug && cd Debug
+```
+
+Next, when I try to run cmake as described step 5. of [https://github.com/mylescallan/OpenStreetMaps_C-](https://github.com/mylescallan/OpenStreetMaps_C-), I get the error `CMake Error: Unknown argument --config`. What worked for me was to remove the `--config` statement and run only
+
+```
+cmake -G "Xcode" -DIO2D_DEFAULT=COREGRAPHICS_MAC ../.
+```
+
+```
+open io2d.xcodeproj
+```
+
+6. In XCode
+
+```
+Build "ALL_BUILD"
+Build "install"
+```
+
+Follow the instructions for compiling and running below.
+
 
 ## Compiling and Running
 
