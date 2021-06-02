@@ -30,7 +30,7 @@ The following instructions are adapted from [https://github.com/mylescallan/Open
 1. `cd` to the `thirdparty` folder and clone the IO2D files:
 
 ```
-git clone --recurse-submodules https://github.com/cpp-io2d/P0267_RefImpl
+git clone https://github.com/cpp-io2d/P0267_RefImpl --recurse-submodules 
 ```
 
 2. Follow the O2D instructions: https://github.com/cpp-io2d/P0267_RefImpl/blob/master/BUILDING.md.
