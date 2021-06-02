@@ -1,6 +1,6 @@
 # Route Planning Project
 
-This repository contains tmy solution for the Route Planning project of the Udacity C++ Nanodegree.
+This repository contains my solution for the Route Planning project of the Udacity C++ Nanodegree.
 
 <img src="map.png" width="600" height="450" />
 
