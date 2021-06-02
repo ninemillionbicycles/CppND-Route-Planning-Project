@@ -1,34 +1,29 @@
 # Route Planning Project
 
-This repo contains the starter code for the Route Planning project.
+This repository contains tmy solution for the Route Planning project of the Udacity C++ Nanodegree.
 
 <img src="map.png" width="600" height="450" />
 
 ## Cloning
 
-When cloning this project, be sure to use the `--recurse-submodules` flag. Using HTTPS:
-```
-git clone https://github.com/udacity/CppND-Route-Planning-Project.git --recurse-submodules
-```
-or with SSH:
-```
-git clone git@github.com:udacity/CppND-Route-Planning-Project.git --recurse-submodules
-```
+When cloning this project, use the `--recurse-submodules` flag. 
 
-## Dependencies for Running Locally
-* cmake >= 3.11.3
-  * All OSes: [click here for installation instructions](https://cmake.org/install/)
-* make >= 4.1 (Linux, Mac), 3.81 (Windows)
-  * Linux: make is installed by default on most Linux distros
-  * Mac: [install Xcode command line tools to get make](https://developer.apple.com/xcode/features/)
-  * Windows: [Click here for installation instructions](http://gnuwin32.sourceforge.net/packages/make.htm)
-* gcc/g++ >= 7.4.0
-  * Linux: gcc / g++ is installed by default on most Linux distros
-  * Mac: same instructions as make - [install Xcode command line tools](https://developer.apple.com/xcode/features/)
-  * Windows: recommend using [MinGW](http://www.mingw.org/)
+## Dependencies
+* cmake $\geq$ 3.11.3
+  * All operating systems: [Click here for installation instructions](https://cmake.org/install/).
+* make $\geq$ 4.1 (Linux, Mac), 3.81 (Windows)
+  * Linux: make is installed by default on most Linux distributions
+  * Mac: [Install Xcode command line tools to get make](https://developer.apple.com/xcode/features/).
+  * Windows: [Click here for installation instructions](http://gnuwin32.sourceforge.net/packages/make.htm).
+* gcc/g++ $\geq$ 7.4.0
+  * Linux: gcc / g++ is installed by default on most Linux distributions.
+  * Mac: Same instructions as for make - [Install Xcode command line tools](https://developer.apple.com/xcode/features/).
+  * Windows: [MinGW](http://www.mingw.org/).
 * IO2D
-  * Installation instructions for all operating systems can be found [here](https://github.com/cpp-io2d/P0267_RefImpl/blob/master/BUILDING.md)
-  * This library must be built in a place where CMake `find_package` will be able to find it
+  * Linux and Windows: Installation instructions can be found [here](https://github.com/cpp-io2d/P0267_RefImpl/blob/master/BUILDING.md).
+  * Mac: I recommend following the steps listed out in the [next section](#io2d-on-mac).
+
+[Install and build IO2D on Mac](#io2d-on-mac)
 
 ## Compiling and Running
 
