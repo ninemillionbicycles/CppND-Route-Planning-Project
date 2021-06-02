@@ -43,13 +43,13 @@ git clone --recurse-submodules https://github.com/cpp-io2d/P0267_RefImpl
 
 ```brew install cmake```
 
-5. In the ``thirdparty` folder `cd` to `P0267_RefImpl` and run the following commands:
+5. In the `thirdparty` folder `cd` to `P0267_RefImpl` and run the following commands:
 
 ```
 mkdir Debug && cd Debug
 ```
 
-Next, when I try to run cmake as described step 5. of [https://github.com/mylescallan/OpenStreetMaps_C-](https://github.com/mylescallan/OpenStreetMaps_C-), I get the error `CMake Error: Unknown argument --config`. What works for me isss to remove the `--config` statement and run only
+Next, when I try to run cmake as described step 5. of [https://github.com/mylescallan/OpenStreetMaps_C-](https://github.com/mylescallan/OpenStreetMaps_C-), I get the error `CMake Error: Unknown argument --config`. What works for me is to remove the `--config` statement and run only
 
 ```
 cmake -G "Xcode" -DIO2D_DEFAULT=COREGRAPHICS_MAC ../.
